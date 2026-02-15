@@ -1,0 +1,13 @@
+-- database: ./Database.db
+
+--all cars
+SELECT * FROM Cars;
+
+--all cars and the makers
+SELECT Makers.Name,Cars.Model FROM Cars
+Join Makers ON Makers.MakerID = Cars.MakerID;
+
+--cars from one maker
+SELECT Cars.Model FROM Cars
+JOIN Makers ON Makers.MakerID = Cars.MakerID
+WHERE Makers.Name = "Nissan";
