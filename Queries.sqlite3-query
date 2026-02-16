@@ -11,3 +11,12 @@ Join Makers ON Makers.MakerID = Cars.MakerID;
 SELECT Cars.Model FROM Cars
 JOIN Makers ON Makers.MakerID = Cars.MakerID
 WHERE Makers.Name = "Nissan";
+
+--just id,maker,model and imageurl
+SELECT Cars.CarID,Makers.name,Cars.model,Cars.ImageURL
+FROM Cars
+JOIN Makers ON Makers.MakerID=Cars.MakerID;
+
+SELECT * FROM Cars 
+JOIN Makers ON Makers.MakerID=Cars.CarID
+WHERE Cars.CarID = ?;
