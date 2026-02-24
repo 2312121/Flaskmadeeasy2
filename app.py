@@ -1,4 +1,4 @@
-from flask import Flask, g
+from flask import Flask, g, render_template
 import sqlite3
 
 DATABASE = 'Database.db'
@@ -35,7 +35,7 @@ def home():
                 FROM Cars
                 JOIN Makers ON Makers.MakerID=Cars.MakerID"""
     results = query_db(sql)
-    return str(results)
+    return render_template("Home.html", results=results)
 
 @app.route('/Cars/<int:id>')
 def Car(id):
@@ -48,3 +48,4 @@ def Car(id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
