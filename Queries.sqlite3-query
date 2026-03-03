@@ -20,3 +20,5 @@ JOIN Makers ON Makers.MakerID=Cars.MakerID;
 SELECT * FROM Cars 
 JOIN Makers ON Makers.MakerID=Cars.CarID
 WHERE Cars.CarID = ?;
+
+SELECT Description FROM Cars

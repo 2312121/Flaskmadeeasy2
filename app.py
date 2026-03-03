@@ -41,11 +41,11 @@ def home():
 def Car(id):
     #just one car based on id
     sql = """SELECT * FROM Cars 
-            JOIN Makers ON Makers.MakerID=Cars.CarID
+            JOIN Makers ON Makers.MakerID=Cars.MakerID
             WHERE Cars.CarID = ?;"""
     result = query_db(sql,(id,),True)
-    return str(result)
+    return render_template("Car.html", Car=result)
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
